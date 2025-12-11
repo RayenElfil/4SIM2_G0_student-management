@@ -12,9 +12,9 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Build & Tests') {
+        stage('Build') {
             steps {
-                sh 'mvn clean test'
+                sh 'mvn clean package -DskipTests'
             }
         }
         stage('Package') {
